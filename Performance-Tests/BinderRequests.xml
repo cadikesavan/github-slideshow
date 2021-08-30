@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="04481139-368a-43cd-960c-8ef91f51d03f" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="BinderRequests" searchProperties="true" timeout="40000" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="04481139-368a-43cd-960c-8ef91f51d03ffileName">BinderRequests</con:setting></con:settings><con:testStep type="restrequest" name="BinderRequests" id="5b78811c-d82c-43e0-802b-435c75deea2c"><con:settings/><con:config service="Pup Binder Requests API" resourcePath="/binderrequests" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="BinderRequests" id="ebd9a177-ca7c-4b7a-a810-beec38628268" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request>{
+  "quoteOptionId": "${#[Performance Tests#FullQuote#GetQuoteOption]#Response#$[0]['quoteOptionId']}",
+  "interactive": false
+}</con:request><con:originalUri>https://api.rlicorp.io/pup/v1.0/binderrequests</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="64f0fee0-99cb-4cbd-8779-b01498c80154" name="Valid HTTP Status Codes" disabled="true"><con:settings/><con:configuration><codes>201</codes></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="1834fd33-9d95-4fbd-ae97-2ac1b8b6892f" name="Check for existence of [binderRequestId]"><con:configuration><path>$['binderRequestId']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="X-RLI-Producer" value="00995"/></con:parameters><con:environmentSpec><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GetBinderRequests" id="4842bc3a-2c7d-4b47-a78f-b366ecd8fff8"><con:settings/><con:config service="Pup Binder Requests API" resourcePath="/binderrequests/{binderRequestId}/{correlationId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetBinderRequests" id="6f256a27-4c73-4cdd-9cff-8a1587e87609" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request/><con:originalUri>https://api.rlicorp.io/pup/v1.0/binderrequests/82c0a66d-fce0-41ab-8c0d-21d29d1b2648/634edce4-17d0-48c6-9e66-44999bef6b26</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5ac4ee16-8e32-4706-84b7-52a83b6df41f" name="Valid HTTP Status Codes" disabled="true"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="03b781cd-eaa7-4475-bbd6-6f4f79700e9c" name="Check for existence of [signatureUrl]" disabled="true"><con:configuration><path>$['signatureUrl']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="585b9632-7bbf-4dbb-bc12-49f80e387188" name="Check for existence of [paymentUrl]" disabled="true"><con:configuration><path>$['paymentUrl']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Dev</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="X-RLI-Producer" value="00995"/><con:entry key="binderRequestId" value="${BinderRequests#Response#$['binderRequestId']}"/><con:entry key="correlationId" value="${BinderRequests#Response#$['correlationId']}"/></con:parameters><con:environmentSpec><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="GetBinderRequestsStatusCheck" id="ec448e8d-6c9d-4b00-88e4-793c4cf46116"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+
+
+	def isRetry =  true
+
+	testRunner.runTestStepByName("GetBinderRequests")
+	
+
+	while(isRetry == true )
+
+	{
+
+		def httpResponseHeaders = context.testCase.testSteps["GetBinderRequests"].testRequest.response.responseHeaders
+		def httpStatus = httpResponseHeaders["#status#"]
+		def httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+		
+		//log.info("Http Staus code is: " + httpStatusCode)
+
+			if(httpStatusCode == "200")
+			{
+			//log.info("Http status code is :" + httpStatusCode  + "setting the isRetry to false")
+			
+			isRetry = false
+
+			//break
+			
+			}
+
+			else if (httpStatusCode == "202")
+
+			{
+			//log.info("Retrying as Http Status code is: " + httpStatusCode)
+
+			testRunner.runTestStepByName("GetBinderRequests")			
+
+			
+			}
+			
+			else if (httpStatusCode == "400")
+
+			{
+			//log.info(" Http Status code is returned , please check the validation errors: " + httpStatusCode)
+
+			isRetry = false
+			//break
+			
+			}
+			
+
+			else
+			{
+				
+				throw new Exception("Result not as expected!")
+				isRetry = false
+				
+			}
+			
+		
+ }
+	</script></con:config></con:testStep><con:testStep type="datasink" name="Data Sink" id="e11e8d40-dd17-4878-8213-9cc77737eb98"><con:settings/><con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSink type="Excel"><con:configuration><file/><outfile>C:/CHITRA/Source/Repos/Test/TestData/PaymentURL.xlsx</outfile><worksheet>Payment</worksheet><cell>A2</cell><evaluateFormulas>false</evaluateFormulas><append>false</append></con:configuration></con:dataSink><con:properties><con:property><con:name>URLRetrieved</con:name><con:value>${GetBinderRequests#Response#$['paymentUrl']}</con:value></con:property></con:properties></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>5b78811c-d82c-43e0-802b-435c75deea2c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ec448e8d-6c9d-4b00-88e4-793c4cf46116</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

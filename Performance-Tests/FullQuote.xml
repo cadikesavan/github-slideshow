@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="1ebbad10-1e23-4dfc-a90f-fdb048e3aeeb" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="FullQuote" searchProperties="true" timeout="40000" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="1ebbad10-1e23-4dfc-a90f-fdb048e3aeebfileName">FullQuote</con:setting></con:settings><con:testStep type="restrequest" name="FullSubmissionWithId" id="494934ca-f7fa-4f75-8d4a-10cc3f7b25d5"><con:settings/><con:config service="Pup Submissions API" resourcePath="/submissions/{submissionId}/full" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="FullSubmissionWithId" id="dd2f9b85-8cb6-4616-b75e-d4b03576131f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request>{
+  "effectiveDate": "${#[Performance Tests#CreateFirstQuote#EffetiveDate]#result}",
+  "namedInsured": {
+    "firstName": "Test",
+    "middleInitial": "L",
+    "lastName": "IL"
+  },
+  "secondNamedInsured": {
+    "firstName": "Second",
+    "middleInitial": "P",
+    "lastName": "Insured"
+  },
+  "contactInformation": {
+    "emailAddress": "test@test.com",
+    "phone": "111-222-3333",
+    "primaryAddress": {
+      "address1": "9025 N Lindbergh Dr",
+      "address2": "",
+      "city": "Peoria",
+      "state": "IL",
+      "zip": "61615"
+    }
+  },
+  "membersOfHousehold": [
+    {
+      "firstName": "Test",
+      "middleInitial": "L",
+      "lastName": "API",
+      "dateOfBirth": "1979-07-24",
+      "licenseOrPermitNumber": "1234-1234-1234",
+      "state": "IL",
+      "numberOfMovingViolations": 0,
+      "numberOfAtFaultAccidents": 0,
+      "numberOfDuiDwi": 0,
+      "inExperiencedOrPermitOrNonUsLicense": false,
+      "relationshipToApplicant": "PolicyHolder",
+      "isLicensed": true
+    }
+  ],
+  "ratingQuestions": {
+    "auto": {
+      "numberOfLicensedVehicles": 1,
+      "numberOfAntiqueOrCollectibleVehicles": 0
+    },
+    "watercraft": {
+      "numberOfWatercraft": 0,
+      "numberOfPersonalWatercraft": 0										
+							  
+											
+    },
+						
+    "property": {
+      "numberOfPropertiesOwnedOrRented": 1,
+      "numberOfInternationalPropertiesOwnedOrRented": 0,
+      "numberOfAcresOfLand": 0
+    },
+    "underlyingCoverage": {
+      "agreedMinimumRequiredLimitsOfAutoLiability": "A",
+      "agreeToMaintainMinimumRequiredLimitsOfAutoLiability": true,
+      "homeownerLiability": 0
+    }
+  },
+  "underwritingQuestions": {
+    "anyFelonies": false,
+    "anyTargetRiskOccupationProfession": false,
+    "anyExistingPersonalUmbrellaPolicyWithRLI": false,
+    "anyPersonalLiabilityClaimsExceeding50000": false,
+    "anyRecklessDriving": false
+  }
+  
+}</con:request><con:originalUri>https://api.rlicorp.io/pup/v1.0/submissions/594b29d3-3eef-4445-944c-55eb12d2cc79/full</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="d5483162-8353-4c41-bb63-6522f4f5d0bb" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="submissionId" value="${#[Performance Tests#CreateFirstQuote#IntSubmission]#Response#$['submissionId']}"/><con:entry key="X-RLI-Producer" value="00995"/></con:parameters><con:environmentSpec><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GetSubmission" id="018e7c5d-28f1-41c6-a168-370d1213617a"><con:settings/><con:config service="Pup Submissions API" resourcePath="/submissions/{submissionId}/{correlationId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetSubmission" id="8f3b7ad0-55ec-4507-ade7-7dc6f6493091" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-RLI-Producer" value="00995" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request/><con:originalUri>https://dev.api.rlicorp.io/pup/v1.0/submissions/submissions/</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="4b78d246-a2e0-44b9-840b-63181830ba18" name="Valid HTTP Status Codes" disabled="true"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="dc583016-14ff-466e-80cb-dcd9c4f3ed37" name="Check for existence of [referenceNumber]" disabled="true"><con:configuration><path>$['referenceNumber']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="submissionId" value="${FullSubmissionWithId#Response#$['submissionId']}"/><con:entry key="X-RLI-Producer" value="00995"/><con:entry key="correlationId" value="${FullSubmissionWithId#Response#$['correlationId']}"/></con:parameters><con:environmentSpec><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="GetSubmissionStatusCheck" id="b3cb6de2-062a-4ffd-b241-41268d4ccfd8"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+
+
+	def isRetry =  true
+
+	testRunner.runTestStepByName("GetSubmission")
+	
+
+	while(isRetry == true )
+
+	{
+
+		def httpResponseHeaders = context.testCase.testSteps["GetSubmission"].testRequest.response.responseHeaders
+		def httpStatus = httpResponseHeaders["#status#"]
+		def httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+		
+		//log.info("Http Staus code is: " + httpStatusCode)
+
+			if(httpStatusCode == "200")
+			{
+			//log.info("Http status code is :" + httpStatusCode  + "setting the isRetry to false")
+			
+			isRetry = false
+
+			//break
+			
+			}
+
+			else if (httpStatusCode == "202")
+
+			{
+			//log.info("Retrying as Http Status code is: " + httpStatusCode)
+
+			testRunner.runTestStepByName("GetSubmission")			
+
+			
+			}
+			
+			else if (httpStatusCode == "400")
+
+			{
+			//log.info(" Http Status code is returned , please check the validation errors: " + httpStatusCode)
+
+			isRetry = false
+			//break
+			
+			}
+			
+
+			else
+			{
+				
+				throw new Exception("Result not as expected!")
+				isRetry = false
+				
+			}
+			
+		
+ }
+	</script></con:config></con:testStep><con:testStep type="restrequest" name="CreateQuote" id="a3ed5488-8f3d-4256-bd01-f4a212d2f3f1"><con:settings/><con:config service="Pup Quotes API" resourcePath="/quotes" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateQuote" id="65f7d4b6-5131-485c-92fe-a5761d7ffa61" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-RLI-Producer" value="00995" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request>{
+  "SubmissionId": "${FullSubmissionWithId#Response#$['submissionId']}"
+}</con:request><con:originalUri>https://pup.dev.api.rlicorp.io/v1.0/quotes/quotes</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5444ed11-538e-413a-b160-2066f5331597" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>201</codes></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="da8f36be-94d2-429f-b12c-97554a8a0e2b" name="Check for existence of [quoteId]"><con:configuration><path>$['quoteId']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="X-RLI-Producer" value="00995"/></con:parameters><con:environmentSpec><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GetQuote" id="3a060e81-91a5-4f3d-a7a8-0c747df3e007"><con:settings/><con:config service="Pup Quotes API" resourcePath="/quotes/{quoteId}/{correlationId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetQuote" id="711172c3-75b6-4469-adc8-fa634d180999" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-RLI-Producer" value="00995" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request/><con:originalUri>https://pup.dev.api.rlicorp.io/v1.0/quotes/15c12b86-df63-4b41-968b-050d07af45f4/552be905-f0e0-4139-9962-6f6d84f06914</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="4b2b080e-e2a9-4e32-8e70-bff35d246b2c" name="Valid HTTP Status Codes" disabled="true"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="MessageContentAssertion" id="a63eba53-5d6e-4499-b401-696347e4a005" name="Message Content Assertion" disabled="true"><con:configuration xsi:type="con:MessageContentAssertion"><con:elements><con:xpath>declare namespace ns1='https://pup.dev.api.rlicorp.io/v1.0/quotes/15c12b86-df63-4b41-968b-050d07af45f4/552be905-f0e0-4139-9962-6f6d84f06914';
+//ns1:Response[1]/ns1:referenceNumber[1]</con:xpath><con:element>referenceNumber</con:element><con:type xsi:nil="true"/><con:operator>exists</con:operator><con:enabled>true</con:enabled><con:expectedValue>PUPQT-0001765</con:expectedValue><con:hasValue>false</con:hasValue><con:numberType>false</con:numberType></con:elements><con:originalMessage><![CDATA[<Response xmlns="https://pup.dev.api.rlicorp.io/v1.0/quotes/15c12b86-df63-4b41-968b-050d07af45f4/552be905-f0e0-4139-9962-6f6d84f06914">
+   <referenceNumber>PUPQT-0001765</referenceNumber>
+   <term>
+      <effectiveDate>2021-07-25T00:00:00+00:00</effectiveDate>
+      <expirationDate>2022-07-25T00:00:00+00:00</expirationDate>
+   </term>
+   <quoteValidThrough>2021-07-23T22:14:12.3230843+00:00</quoteValidThrough>
+   <quoteOptions>
+      <e>
+         <quoteOptionId>f4d23d71-eaa5-48a5-b95f-487912e21173</quoteOptionId>
+         <totalPremium>167.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>167.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4598069+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4598071+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>1000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>ff2b6ccf-44f4-4b71-b3a1-e4b22b71c9fe</quoteOptionId>
+         <totalPremium>309.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>309.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4598551+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4598552+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>2000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>ff862ee3-cd68-481b-a06b-e4fbc9d0c1c9</quoteOptionId>
+         <totalPremium>415.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>415.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4599013+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4599014+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>3000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>7559494e-79af-46bb-b745-8616b4b9d053</quoteOptionId>
+         <totalPremium>548.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>548.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4599487+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4599488+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>5000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>949b5cb2-2f8c-4ab4-8175-4224991dce02</quoteOptionId>
+         <totalPremium>293.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>167.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4371864+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4371866+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>1000000.0</value>
+                  </e>
+               </limits>
+            </e>
+            <e>
+               <name>UM/UIM</name>
+               <premium>126.0</premium>
+               <type>UMUIM</type>
+               <effectiveDate>2021-07-22T22:14:12.4371941+00:00</effectiveDate>
+               <expirationDate>2021-08-05T00:00:00+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>UMUIM</type>
+                     <value>1000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>345504b1-e17d-44aa-a511-65ba1dc9e66d</quoteOptionId>
+         <totalPremium>435.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>309.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4372237+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4372238+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>2000000.0</value>
+                  </e>
+               </limits>
+            </e>
+            <e>
+               <name>UM/UIM</name>
+               <premium>126.0</premium>
+               <type>UMUIM</type>
+               <effectiveDate>2021-07-22T22:14:12.4372317+00:00</effectiveDate>
+               <expirationDate>2021-08-05T00:00:00+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>UMUIM</type>
+                     <value>1000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>65834a70-f399-4f90-b7d8-4ddb69437896</quoteOptionId>
+         <totalPremium>541.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>415.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4372735+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.4372736+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>3000000.0</value>
+                  </e>
+               </limits>
+            </e>
+            <e>
+               <name>UM/UIM</name>
+               <premium>126.0</premium>
+               <type>UMUIM</type>
+               <effectiveDate>2021-07-22T22:14:12.4372817+00:00</effectiveDate>
+               <expirationDate>2021-08-05T00:00:00+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>UMUIM</type>
+                     <value>1000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+      <e>
+         <quoteOptionId>0ca45efd-faff-4ddd-a39a-9aa3b6d5cd08</quoteOptionId>
+         <totalPremium>674.0</totalPremium>
+         <coverages>
+            <e>
+               <name>Umbrella</name>
+               <premium>548.0</premium>
+               <type>PERSUMB</type>
+               <effectiveDate>2021-07-22T22:14:12.4373089+00:00</effectiveDate>
+               <expirationDate>2022-07-22T22:14:12.437309+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>PERSUMB</type>
+                     <value>5000000.0</value>
+                  </e>
+               </limits>
+            </e>
+            <e>
+               <name>UM/UIM</name>
+               <premium>126.0</premium>
+               <type>UMUIM</type>
+               <effectiveDate>2021-07-22T22:14:12.437315+00:00</effectiveDate>
+               <expirationDate>2021-08-05T00:00:00+00:00</expirationDate>
+               <limits>
+                  <e>
+                     <description/>
+                     <type>UMUIM</type>
+                     <value>1000000.0</value>
+                  </e>
+               </limits>
+            </e>
+         </coverages>
+      </e>
+   </quoteOptions>
+</Response>]]></con:originalMessage></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="X-RLI-Producer" value="00995"/><con:entry key="correlationId" value="${CreateQuote#Response#$['correlationId']}"/><con:entry key="quoteId" value="${CreateQuote#Response#$['quoteId']}"/></con:parameters><con:environmentSpec><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="GetQuoteStatusCheck" id="8a70fc2d-bfa3-4fba-ba92-2cfbd4d682dd"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+
+
+	def isRetry =  true
+
+	testRunner.runTestStepByName("GetQuote")
+	
+
+	while(isRetry == true )
+
+	{
+
+		def httpResponseHeaders = context.testCase.testSteps["GetQuote"].testRequest.response.responseHeaders
+		def httpStatus = httpResponseHeaders["#status#"]
+		def httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+		
+		//log.info("Http Staus code is: " + httpStatusCode)
+
+			if(httpStatusCode == "200")
+			{
+			//log.info("Http status code is :" + httpStatusCode  + "setting the isRetry to false")
+			
+			isRetry = false
+
+			//break
+			
+			}
+
+			else if (httpStatusCode == "202")
+
+			{
+			//log.info("Retrying as Http Status code is: " + httpStatusCode)
+
+			testRunner.runTestStepByName("GetQuote")			
+
+			
+			}
+			
+			else if (httpStatusCode == "400")
+
+			{
+			//log.info(" Http Status code is returned , please check the validation errors: " + httpStatusCode)
+
+			isRetry = false
+			//break
+			
+			}
+			
+
+			else
+			{
+				
+				throw new Exception("Result not as expected!")
+				isRetry = false
+				
+			}
+			
+		
+ }
+	</script></con:config></con:testStep><con:testStep type="restrequest" name="GetQuoteOption" id="02588b6d-4855-463f-8152-125bf0344380"><con:settings/><con:config service="Pup Quotes API" resourcePath="/quotes/{quoteId}/{correlationId}/quoteoptions" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetQuoteOption" id="e51ee750-d58b-4da0-83f4-f34593ecbea1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-RLI-Producer" value="12345" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://dev.api.rlicorp.io/pup/v1.0</con:endpoint><con:request/><con:originalUri>https://dev.api.rlicorp.io/pup/v1.0/quotes/24b8bed2-c8d4-4f01-9ab3-97d3796f09ba/a3715211-6b38-4b19-8ba1-a981d551d3dc/quoteoptions</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="c2601d33-53f5-47c9-8ac7-420499ce5008" name="Valid HTTP Status Codes" disabled="true"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="377973af-5283-481c-8b1d-8688512d74c2" name="Check for existence of [quoteOptionId]"><con:configuration><path>$[0]['quoteOptionId']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="X-RLI-Producer" value="00995"/><con:entry key="correlationId" value="${CreateQuote#Response#$['correlationId']}"/><con:entry key="quoteId" value="${CreateQuote#Response#$['quoteId']}"/></con:parameters><con:environmentSpec><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Dev</con:authProfile></con:entry><con:entry environmentId="75114eaf-e15a-4a2d-962b-2c43697c3a81"><con:authProfile>Dev</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="a1acc9d9-dedb-4536-958a-a5cafc7c0d55"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="8c4dd766-676d-4232-a816-b1b61c59538d"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

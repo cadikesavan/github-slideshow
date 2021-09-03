@@ -35,7 +35,43 @@
   <con:entry key="Domain" value=""/>
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="false"/>
-</xml-fragment>]]></con:setting><con:setting id="131c19cd-fa2e-4386-af46-58f2989ffb6afileName">Connect-Integration-API-readyapi-project</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer><con:databaseConnection><con:name>Test</con:name><con:driver xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:connectionString xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:password/><con:connectionProperties/></con:databaseConnection></con:databaseConnectionContainer><con:jmsConnectionContainer/><con:oAuth2ProfileContainer><con:oAuth2Profile><con:name>Dev</con:name><con:type>OAuth 2.0</con:type><con:accessTokenURI>https://rli.oktapreview.com/oauth2/ausjznb4zBWtHLVYV1d6/v1/token</con:accessTokenURI><con:accessToken>eyJraWQiOiJPc1lkVkR4aXdpRWNGRlhpbTRwTXVrQ043bTE3Mmo3cFRybnViUFRuZEFjIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlcwM0p0LWloRFFPMGdiRXdaWmdSNzBObmNLTk5XV1lrbW1pVnpfTVZWS0UiLCJpc3MiOiJodHRwczovL3JsaS5va3RhcHJldmlldy5jb20vb2F1dGgyL2F1c2p6bmI0ekJXdEhMVllWMWQ2IiwiYXVkIjoiYXBpOi8va29uZyIsImlhdCI6MTYzMDY4MTI3NywiZXhwIjoxNjMwNjg0ODc3LCJjaWQiOiIwb2Fqem15aTVXZkxaVkR4VzFkNiIsInNjcCI6WyJjbGllbnRfY3JlZGVudGlhbCJdLCJzdWIiOiIwb2Fqem15aTVXZkxaVkR4VzFkNiIsInByb2R1Y2VyIjoxMjMzNDV9.Z1BCfMiPwrBEhe1Mgm8SDdtfobDzgYU7BM_eVydmRe6WsAsiVIa2BTo_lHZd48e5oD9fQFcemHZMss0vU_ydC51u7JbefLd8cxP18UgCOgHVuwvkjLYfYB02wyx8fJKv6_j9qo5iRVb2rdZeWelIQDjap1-JXXQllMik3yErq6N9LItYW0mjnrdBw-VwSMu8kkByPe8jztpAIrs5WpJqEuafU_fTsVCKknqXQAD4KkrIJPJaMc-sW7OKnUynWvU-d9L1VGMkM_pmsp1qi8G2FhcW_G-YYE2XEcdgHDWBZz4589Zh7fdbx_Zrh-QWg7XNo8rPTDjG9qZXgIRgFRlGAQ</con:accessToken><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:accessTokenStatus>EXPIRED</con:accessTokenStatus><con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus><con:accessTokenIssuedTime>1630681277</con:accessTokenIssuedTime><con:manualAccessTokenExpirationTime>1</con:manualAccessTokenExpirationTime><con:useManualAccessTokenExpirationTime>true</con:useManualAccessTokenExpirationTime><con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit><con:clientID>0oajzmyi5WfLZVDxW1d6</con:clientID><con:clientSecret>t5qXhlu1hnIybnUGVyQZ0HihoqcPFTxSnYweenAt</con:clientSecret><con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:scope>client_credential</con:scope><con:accessTokenExpirationTime>3600</con:accessTokenExpirationTime><con:jwtConfiguration/><con:responseType>id_token</con:responseType></con:oAuth2Profile></con:oAuth2ProfileContainer><con:oAuth1ProfileContainer/><con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest"><con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+</xml-fragment>]]></con:setting><con:setting id="131c19cd-fa2e-4386-af46-58f2989ffb6afileName">Connect-Integration-API-readyapi-project</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Settings File Password" value=""/>
+  <con:entry key="Report Format(s)" value="XML"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="JUnit-Style report for automation"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="&lt;all>"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Test Case" value="&lt;all>"/>
+  <con:entry key="Slack Access Token" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Users\cadikesa\AppData\Local\Programs\SmartBear\ReadyAPI-3.9.1\bin"/>
+  <con:entry key="Environment" value="No Environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="${WORKSPACE}"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer><con:databaseConnection><con:name>Test</con:name><con:driver xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:connectionString xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:password/><con:connectionProperties/></con:databaseConnection></con:databaseConnectionContainer><con:jmsConnectionContainer/><con:oAuth2ProfileContainer><con:oAuth2Profile><con:name>Dev</con:name><con:type>OAuth 2.0</con:type><con:accessTokenURI>https://rli.oktapreview.com/oauth2/ausjznb4zBWtHLVYV1d6/v1/token</con:accessTokenURI><con:accessToken>eyJraWQiOiJPc1lkVkR4aXdpRWNGRlhpbTRwTXVrQ043bTE3Mmo3cFRybnViUFRuZEFjIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlcwM0p0LWloRFFPMGdiRXdaWmdSNzBObmNLTk5XV1lrbW1pVnpfTVZWS0UiLCJpc3MiOiJodHRwczovL3JsaS5va3RhcHJldmlldy5jb20vb2F1dGgyL2F1c2p6bmI0ekJXdEhMVllWMWQ2IiwiYXVkIjoiYXBpOi8va29uZyIsImlhdCI6MTYzMDY4MTI3NywiZXhwIjoxNjMwNjg0ODc3LCJjaWQiOiIwb2Fqem15aTVXZkxaVkR4VzFkNiIsInNjcCI6WyJjbGllbnRfY3JlZGVudGlhbCJdLCJzdWIiOiIwb2Fqem15aTVXZkxaVkR4VzFkNiIsInByb2R1Y2VyIjoxMjMzNDV9.Z1BCfMiPwrBEhe1Mgm8SDdtfobDzgYU7BM_eVydmRe6WsAsiVIa2BTo_lHZd48e5oD9fQFcemHZMss0vU_ydC51u7JbefLd8cxP18UgCOgHVuwvkjLYfYB02wyx8fJKv6_j9qo5iRVb2rdZeWelIQDjap1-JXXQllMik3yErq6N9LItYW0mjnrdBw-VwSMu8kkByPe8jztpAIrs5WpJqEuafU_fTsVCKknqXQAD4KkrIJPJaMc-sW7OKnUynWvU-d9L1VGMkM_pmsp1qi8G2FhcW_G-YYE2XEcdgHDWBZz4589Zh7fdbx_Zrh-QWg7XNo8rPTDjG9qZXgIRgFRlGAQ</con:accessToken><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:accessTokenStatus>EXPIRED</con:accessTokenStatus><con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus><con:accessTokenIssuedTime>1630681277</con:accessTokenIssuedTime><con:manualAccessTokenExpirationTime>1</con:manualAccessTokenExpirationTime><con:useManualAccessTokenExpirationTime>true</con:useManualAccessTokenExpirationTime><con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit><con:clientID>0oajzmyi5WfLZVDxW1d6</con:clientID><con:clientSecret>t5qXhlu1hnIybnUGVyQZ0HihoqcPFTxSnYweenAt</con:clientSecret><con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:scope>client_credential</con:scope><con:accessTokenExpirationTime>3600</con:accessTokenExpirationTime><con:jwtConfiguration/><con:responseType>id_token</con:responseType></con:oAuth2Profile></con:oAuth2ProfileContainer><con:oAuth1ProfileContainer/><con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest"><con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
 // This code is often used for adding custom authentication to ReadyAPI functional tests
 
 // If hardcoding the token, uncomment and change line 5

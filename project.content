@@ -28,10 +28,13 @@ Pup-Submissions-API\%2Fsubmissions.xml
 https%3A%2F%2Fdev.sign.rlicorp.com\Complete.xml
 Payment\ThankYou.xml
 Payment-2\rlin.xml
+Security-Test-1.xml
 Functional-Tests\PolicyAutoBind.xml
 Functional-Tests\PolicyReview.xml
 Functional-Tests\PolicyWithLimitC.xml
 Functional-Tests\NonEligibleScenarios.xml
+Functional-Tests\QuoteEmail.xml
+Functional-Tests\MemberOfHousehold.xml
 Performance-Tests\CreateFirstQuote.xml
 Performance-Tests\FullQuote.xml
 Performance-Tests\BinderRequests.xml

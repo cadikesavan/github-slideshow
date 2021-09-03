@@ -2,3 +2,5 @@ PolicyAutoBind.xml
 PolicyReview.xml
 PolicyWithLimitC.xml
 NonEligibleScenarios.xml
+QuoteEmail.xml
+MemberOfHousehold.xml
